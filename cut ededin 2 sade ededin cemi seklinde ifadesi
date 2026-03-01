@@ -1,0 +1,30 @@
+#Cut ededi 2 sade ededin cemi seklinde ifadesi
+number = int(input("Enter the number: "))
+first_cixarilan = 0
+second_cixarilan = 0
+ferq = 100
+def f(x):
+    say = 0
+    for bolen in range(2 , x):
+        if x % bolen == 0:
+            say = +1
+        else:
+            continue
+    if say == 0:
+        return "sade"
+    else:
+        return "murekkeb"
+    
+if number % 2 == 0:
+    for first_toplanan in range( 2 , number // 2 + 1):
+             for second_toplanan in range ( number // 2 , number - 1 ):
+                 if f(first_toplanan) == "sade" and f(second_toplanan) == "sade" and first_toplanan + second_toplanan == number :
+                     if second_toplanan - first_toplanan < ferq:
+                         ferq = second_toplanan - first_toplanan
+                         first_cixarilan = first_toplanan
+                         second_cixarilan = second_toplanan
+                     else:
+                         continue
+                 else:
+                    continue
+print(first_cixarilan ,second_cixarilan)
